@@ -11,5 +11,9 @@ spring boot, spring mvn, maven, jdbc template, dbcp<br>
 jsp,以后会尝试引入vue.js,或者react.但是作者真的很菜，或许以后是遥遥无期。<br>
 <b>API</b><br>
 部落冲突官网提供了一些基本的API.<br>
+<b>如何构建项目</b><br>
+安装JDK1.8及其以上版本<br>
+安装apache-maven-3.5.0及其以上版本<br>
+安装mysql-5.7.15及其以上版本<br>
 <b>项目运行图片</b><br>
  ![image](https://github.com/ChenLin12138/Clash-of-Clans-Admin/blob/master/src/main/resources/static/pic/DonationRank.PNG)
