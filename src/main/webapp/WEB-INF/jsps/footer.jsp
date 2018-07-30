@@ -12,7 +12,7 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container" style="position:relative" style="background-color:red">
+	<div class="container" style="position:relative">
 		<img src="../pic/l_retina.b9f315.png" class="img-rounded" style="position:absolute;z-index:1;left:73%;top:18%;">	
 		<img src="../pic/blank.PNG" class="img-rounded" height="140" width="100%">
 	</div>
