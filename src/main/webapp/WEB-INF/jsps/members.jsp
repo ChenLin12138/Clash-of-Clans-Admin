@@ -16,7 +16,7 @@
 	<div class="container">
 		<table class="table table-hover">
 			<thead>
-				<th>#ID</th><th>名称</th><th>近期增援</th><th>近期收到</th>
+				<th>#ID</th><th>名称</th><th>近期增援</th><th>近期收到</th><th>职位</th>
 			</thead>
 			<tbody>
 				<c:forEach items="${members}" var="member">
@@ -25,6 +25,7 @@
 				<td>${member.name}</td>
 				<td>${member.donations}</td>
 				<td>${member.donationsReceived}</td>
+				<td>${member.position}</td>
 				</tr>
 				</c:forEach>
 			</tbody>

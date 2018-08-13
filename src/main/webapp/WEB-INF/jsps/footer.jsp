@@ -13,8 +13,8 @@
 </head>
 <body>
 	<div class="container" style="position:relative">
-		<img src="../pic/l_retina.b9f315.png" class="img-rounded" style="position:absolute;z-index:1;left:73%;top:18%;">	
-		<img src="../pic/blank.PNG" class="img-rounded" height="140" width="100%">
+		<img src="../pic/l_retina.b9f315.png" class="img-rounded" style="position:absolute;z-index:1;left:7%;">	
+		<img src="../pic/blank.PNG" class="img-rounded" height="100px" width="100%">
 	</div>
 </body>
 </html>

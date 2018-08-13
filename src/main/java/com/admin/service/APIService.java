@@ -16,7 +16,7 @@ import com.admin.parser.MemberParser;
 @Service
 public class APIService {
 
-	public List<Member> getMembers(String url, String token){
+	public List<Member> getMembers(String url, String token) throws IOException{
 
         StringBuilder result = new StringBuilder();
         try {
