@@ -1,8 +1,7 @@
 package com.admin.controller;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -29,7 +28,7 @@ public class ClanController {
 	private APIProperties properties;
 	
     @RequestMapping(value="/members", method = RequestMethod.GET)
-    public String getMembers(Model model){	
+    public String getMembers(Model model) throws IOException{	
     	Collection<Member> members = service.getMembers(properties.getUrl(), properties.getToken());	
     	
     	Set<MemberDonationSortWrapper> set = new TreeSet<MemberDonationSortWrapper>();

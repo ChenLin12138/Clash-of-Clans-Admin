@@ -5,6 +5,7 @@ public class Member{
 	private int pk;
 	private String tag;
 	private String name;
+	private String position;
 	private int donations;
 	private int donationsReceived;
 	
@@ -25,6 +26,12 @@ public class Member{
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
 	}
 	public int getDonations() {
 		return donations;
