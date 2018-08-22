@@ -73,6 +73,12 @@
    			 <classifier>jdk15</classifier>
 		</dependency>
 		
+		<dependency>
+  			<groupId>org.hibernate</groupId>
+ 			<artifactId>hibernate-validator</artifactId>
+ 			<version>4.3.0.Final</version>
+</dependency>
+		
 	</dependencies>
 	
 	<build>
