@@ -1,6 +1,7 @@
 package com.admin.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -86,12 +87,12 @@ public class ClanController {
 		return "waradmin";
 	}
 	@RequestMapping(value = "/waradmin", method = RequestMethod.POST)
-	public String warEnrollsubmit(@Valid Warmember warmember,Errors errors,Model model) throws IOException {
+	public String warEnrollsubmit(@Valid Warmember warmember,Errors errors,Model model) throws SQLException  {
 		
 		if (errors.hasErrors()) {
-			List<Warmember> members=service.showMember();
-			model.addAttribute("warmember", members);
-			return "waradmin";
+		//	List<Warmember> members=service.showMember();
+		//	model.addAttribute("warmember", members);
+			return "errors";
 		}
 		service.save(warmember);
 		List<Warmember> members=service.showMember();

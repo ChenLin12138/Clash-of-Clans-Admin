@@ -4,12 +4,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 public class Warmember {
-	@NotBlank(message="{required}")
-//	@Size(min=5,max=10,message="{required}")
+//	@NotBlank(message="日期不能为空！")
+	@NotBlank(message="{date.required}")
+//	@Size(min=5,max=10,message="{date.required}")
 	private String date;
-	@NotBlank(message="{required}")
+	@NotBlank(message="名称不能为空！")
 	//@Size(min=2,max=10,message="{required}")
 	private String name;
 	private int id;

@@ -35,7 +35,14 @@
 			<thead>		
 		    	<th>ID</th>		
 				<th>村庄名称</th>
-				<th>报名日期</th>
+				<th>	报名日期			
+              <select id="date" name="date">
+              <option value="0">==请选择==</option>
+    		   <c:forEach items="${warmember}" var="member" varStatus="st">
+   	 	       <option value="${date}">${member.date}</option>
+   			   </c:forEach>
+				</select>
+            </th>
 			</thead>
 			<tbody>		
 			<c:forEach items="${warmember}" var="member">
