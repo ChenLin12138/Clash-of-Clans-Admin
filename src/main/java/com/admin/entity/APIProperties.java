@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 public class APIProperties {
 	
 	private String url;
+	private String clanurl;
+	private String currentwar;
 	private String token;
 	
 	public String getUrl() {
@@ -26,6 +28,17 @@ public class APIProperties {
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}public String getClanurl() {
+		return clanurl;
+	}
+	public void setClanurl(String clanurl) {
+		this.clanurl = clanurl;
+	}
+	public String getCurrentwar() {
+		return currentwar;
+	}
+	public void setCurrentwar(String currentwar) {
+		this.currentwar = currentwar;
 	}
 	
 }

@@ -12,8 +12,8 @@
 <h4>The product has been saved.</h4>
 <p>
 <h5>Details:</h5>
-Product Pid:${product.pid }<br/>
-Product Name:${product.name }<br/>
+Product Pid:${product.pid}<br/>
+Product Name:${product.name}<br/>
 Description:${product.description}<br/>
 Price:$${product.price}<br/>
 <input type="hidden" name="id" value=${product.id}>

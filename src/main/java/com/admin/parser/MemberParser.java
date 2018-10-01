@@ -40,7 +40,7 @@ public class MemberParser {
 			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
 			members.add(member);
 			} 
-		
+		//int abb=members.size();
 		return members;
 	}
 }

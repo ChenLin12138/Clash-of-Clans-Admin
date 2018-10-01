@@ -6,7 +6,7 @@ public class MemberDonationSortWrapper extends Member implements Comparable<Memb
 	private String tag;
 	private String name;
 	private String position;
-	private int donations;
+	private int donations;		
 	private int donationsReceived;
 	
 	public MemberDonationSortWrapper(Member member){
@@ -21,12 +21,13 @@ public class MemberDonationSortWrapper extends Member implements Comparable<Memb
 	@Override
 	public int compareTo(Member member) {
 		// TODO Auto-generated method stub
+		int num=member.getDonations()-this.getDonations();
 		if(this.getDonations() < member.getDonations()){
 			return 1;
 		}else if(this.donations > member.getDonations()){
 			return -1;
 		}
-		return 0;
+		return num==0 ? this.tag.compareTo(member.getTag()) : num;
 	}
 
 	public int getPk() {

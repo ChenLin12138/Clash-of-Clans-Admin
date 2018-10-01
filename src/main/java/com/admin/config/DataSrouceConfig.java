@@ -12,7 +12,7 @@ public class DataSrouceConfig {
 	public BasicDataSource dataSrouce() {
 		BasicDataSource dataSrouce = new BasicDataSource();
 		dataSrouce.setDriverClassName("org.gjt.mm.mysql.Driver");
-		dataSrouce.setUrl("jdbc:mysql://localhost:3306/COC?useSSL=false");
+		dataSrouce.setUrl("jdbc:mysql://localhost:3306/test?useSSL=false");
 		dataSrouce.setUsername("root");
 		dataSrouce.setPassword("root");
 		dataSrouce.setInitialSize(1);
