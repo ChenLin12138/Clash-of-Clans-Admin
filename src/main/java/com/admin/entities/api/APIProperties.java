@@ -1,4 +1,4 @@
-package com.admin.entity;
+package com.admin.entities.api;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

@@ -16,12 +16,12 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.admin.entity.APIProperties;
-import com.admin.model.Clandetails;
-import com.admin.model.Member;
-import com.admin.model.MemberDonationSortWrapper;
-import com.admin.model.Warmember;
-import com.admin.service.APIService;
+import com.admin.entities.Clandetails;
+import com.admin.entities.Member;
+import com.admin.entities.MemberDonationSortWrapper;
+import com.admin.entities.Warmember;
+import com.admin.entities.api.APIProperties;
+import com.admin.serviceImpl.APIService;
 
 @Controller
 @RequestMapping("/clan")
@@ -33,6 +33,7 @@ public class ClanController {
 
 	@Autowired
 	private APIProperties properties;
+	
 
 	@RequestMapping(value = "/members", method = RequestMethod.GET)
 	public String getMembers(Model model) throws IOException {
@@ -80,12 +81,16 @@ public class ClanController {
 
 		return "clandetails";
 	}*/
+	
 	@RequestMapping(value = "/waradmin", method = RequestMethod.GET)
 	public String warEnroll(Model model) throws IOException {
+		
 		List<Warmember> members=service.showMember();
+		
 		model.addAttribute("warmember", members);
 		return "waradmin";
 	}
+	
 	@RequestMapping(value = "/waradmin", method = RequestMethod.POST)
 	public String warEnrollsubmit(@Valid Warmember warmember,Errors errors,Model model) throws SQLException  {
 		

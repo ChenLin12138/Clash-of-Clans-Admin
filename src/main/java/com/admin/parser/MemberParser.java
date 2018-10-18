@@ -10,7 +10,7 @@ import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.admin.model.Member;
+import com.admin.entities.Member;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

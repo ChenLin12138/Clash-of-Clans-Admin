@@ -39,16 +39,15 @@
               <select id="date" name="date">
               <option value="0">==请选择==</option>
     		   <c:forEach items="${warmember}" var="member" varStatus="st">
-   	 	       <option value="${date}">${member.date}</option>
+   	 	       <option value="${date}">${member.beginDate}</option>
    			   </c:forEach>
 				</select>
             </th>
 			</thead>
 			<tbody>		
 			<c:forEach items="${warmember}" var="member">
-			<td>${member.id}</td>
-			<td>${member.name}</td>
-			<td>${member.date}</td>
+			<td>${member.memberTag}</td>
+			<td>${member.beginDate}</td>
 			</tr>	
 			</c:forEach>					
 			</tbody>				

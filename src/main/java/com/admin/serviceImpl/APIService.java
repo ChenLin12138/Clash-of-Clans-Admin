@@ -1,4 +1,4 @@
-package com.admin.service;
+package com.admin.serviceImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Service;
 
-import com.admin.model.Member;
-import com.admin.model.Warmember;
-import com.admin.model.Clandetails;
+import com.admin.entities.Clandetails;
+import com.admin.entities.Member;
+import com.admin.entities.Warmember;
 import com.admin.parser.ClanParser;
 import com.admin.parser.CurrentWarParser;
 import com.admin.parser.MemberParser;

@@ -1,4 +1,4 @@
-package com.admin.model;
+package com.admin.entities;
 
 public class Clandetails {
 	private String tag;

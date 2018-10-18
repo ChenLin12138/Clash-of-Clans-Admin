@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.admin.model.Clandetails;
-import com.admin.model.Member;
+import com.admin.entities.Clandetails;
+import com.admin.entities.Member;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

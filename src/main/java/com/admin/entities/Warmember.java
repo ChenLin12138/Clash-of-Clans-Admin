@@ -1,4 +1,4 @@
-package com.admin.model;
+package com.admin.entities;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
