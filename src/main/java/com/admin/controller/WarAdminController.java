@@ -13,7 +13,6 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.admin.entities.ClanWar;
 import com.admin.entities.ClanWarApp;
 import com.admin.entities.Member;
 import com.admin.entities.Warmember;

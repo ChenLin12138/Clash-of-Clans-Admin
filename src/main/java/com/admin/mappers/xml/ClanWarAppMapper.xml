@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.admin.mappers.ClanWarAppMapper" >
+  <resultMap id="BaseResultMap" type="com.admin.entities.ClanWarApp" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="war_id" property="warId" jdbcType="INTEGER" />
+    <result column="member_tag" property="memberTag" jdbcType="CHAR" />
+    <result column="begin_date" property="beginDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, war_id, member_tag, begin_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from clanwarapp
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from clanwarapp
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.admin.entities.ClanWarApp" >
+    insert into clanwarapp (id, war_id, member_tag, 
+      begin_date)
+    values (#{id,jdbcType=INTEGER}, #{warId,jdbcType=INTEGER}, #{memberTag,jdbcType=CHAR}, 
+      #{beginDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.admin.entities.ClanWarApp" >
+    insert into clanwarapp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="warId != null" >
+        war_id,
+      </if>
+      <if test="memberTag != null" >
+        member_tag,
+      </if>
+      <if test="beginDate != null" >
+        begin_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="warId != null" >
+        #{warId,jdbcType=INTEGER},
+      </if>
+      <if test="memberTag != null" >
+        #{memberTag,jdbcType=CHAR},
+      </if>
+      <if test="beginDate != null" >
+        #{beginDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.admin.entities.ClanWarApp" >
+    update clanwarapp
+    <set >
+      <if test="warId != null" >
+        war_id = #{warId,jdbcType=INTEGER},
+      </if>
+      <if test="memberTag != null" >
+        member_tag = #{memberTag,jdbcType=CHAR},
+      </if>
+      <if test="beginDate != null" >
+        begin_date = #{beginDate,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.admin.entities.ClanWarApp" >
+    update clanwarapp
+    set war_id = #{warId,jdbcType=INTEGER},
+      member_tag = #{memberTag,jdbcType=CHAR},
+      begin_date = #{beginDate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

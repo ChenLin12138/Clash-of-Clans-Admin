@@ -1,56 +1,51 @@
 package com.admin.entities;
 
+import java.util.Date;
+
 public class ClanWarApp {
-	
-	private int id;
-	
-	private int warId;
-	
-	private String memberTag;
-	
-	private String beginDate;
-	
-	public ClanWarApp(){
-		
-	}
-	
-	public ClanWarApp(String memberId, int warId, String beginDate){
-		this.warId = warId;
-		this.memberTag = memberId;
-		this.beginDate = beginDate;
-	}
+    private Integer id;
 
-	public int getId() {
-		return id;
-	}
+    private Integer warId;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    private String memberTag;
 
-	public int getWarId() {
-		return warId;
-	}
+    private Date beginDate;
 
-	public void setWarId(int warId) {
-		this.warId = warId;
-	}
+    public ClanWarApp(String memberTag, Integer warId, Date beginDate) {
+    	this.memberTag = memberTag;
+    	this.warId = warId;
+    	this.beginDate = beginDate;
+    }
 
-	public String getMemberTag() {
-		return memberTag;
-	}
+	public Integer getId() {
+        return id;
+    }
 
-	public void setMemberTag(String memberTag) {
-		this.memberTag = memberTag;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getBeginDate() {
-		return beginDate;
-	}
+    public Integer getWarId() {
+        return warId;
+    }
 
-	public void setBeginDate(String beginDate) {
-		this.beginDate = beginDate;
-	}
+    public void setWarId(Integer warId) {
+        this.warId = warId;
+    }
 
+    public String getMemberTag() {
+        return memberTag;
+    }
 
+    public void setMemberTag(String memberTag) {
+        this.memberTag = memberTag == null ? null : memberTag.trim();
+    }
+
+    public Date getBeginDate() {
+        return beginDate;
+    }
+
+    public void setBeginDate(Date beginDate) {
+        this.beginDate = beginDate;
+    }
 }
