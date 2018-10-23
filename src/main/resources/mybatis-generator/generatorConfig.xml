@@ -16,19 +16,19 @@
                         connectionURL="jdbc:mysql://127.0.0.1:3306/coc" userId="root"
                         password="root"/>
 
-        <javaModelGenerator targetPackage="com.admin.entities"
+        <javaModelGenerator targetPackage="com.chenlin.cocadmin.entities"
                             targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.admin.mappers.xml"
+        <sqlMapGenerator targetPackage="com.chenlin.cocadmin.mappers.xml"
                          targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         
 
-        <javaClientGenerator targetPackage="com.admin.mappers"
+        <javaClientGenerator targetPackage="com.chenlin.cocadmin.mappers"
                              targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
