@@ -1,5 +1,6 @@
 package com.chenlin.cocadmin.parser;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +10,8 @@ import java.util.List;
 import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import com.chenlin.cocadmin.entities.Member;
 
@@ -32,15 +35,15 @@ public class MemberParser {
 			member.setTag(itemObj.getString("tag"));
 			member.setName(itemObj.getString("name"));
 			Properties prop = new Properties();  
-		      FileInputStream fis =   
-		       new FileInputStream("/home/zdm/eclipse-workspace/coc/Clash-of-Clans-Admin/target/classes/cn.properties");  
+		    Resource resource = new ClassPathResource("cn.properties");
+		    File file = resource.getFile();
+		    FileInputStream fis = new FileInputStream(file); 	      
 		    prop.load(fis);  		       
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
 			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
 			members.add(member);
 			} 
-		//int abb=members.size();
 		return members;
 	}
 }

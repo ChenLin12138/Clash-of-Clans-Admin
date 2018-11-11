@@ -15,7 +15,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/coc" userId="root"
                         password="root"/>
-
+<!-- 请注意适当修改targetProject地址 -->
         <javaModelGenerator targetPackage="com.chenlin.cocadmin.entities"
                             targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java">
             <property name="enableSubPackages" value="true"/>

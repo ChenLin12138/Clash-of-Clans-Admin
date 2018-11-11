@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.admin.mappers.IClanWarAppMapper" >
+<mapper namespace="com.chenlin.cocadmin.mappers.ClanWarAppMapper" >
   
-  <resultMap id="BaseResultMap" type="com.admin.entities.ClanWarApp" >
+  <resultMap id="BaseResultMap" type="com.chenlin.cocadmin.entities.ClanWarApp" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="war_id" property="warId" jdbcType="INTEGER" />
     <result column="member_tag" property="memberTag" jdbcType="CHAR" />
@@ -25,14 +25,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   
-  <insert id="insert" parameterType="com.admin.entities.ClanWarApp" >
+  <insert id="insert" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     insert into clanwarapp (id, war_id, member_tag, 
       begin_date)
     values (#{id,jdbcType=INTEGER}, #{warId,jdbcType=INTEGER}, #{memberTag,jdbcType=CHAR}, 
       #{beginDate,jdbcType=DATE})
   </insert>
   
-  <insert id="insertSelective" parameterType="com.admin.entities.ClanWarApp" >
+  <insert id="insertSelective" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     insert into clanwarapp
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +64,7 @@
     </trim>
   </insert>
   
-  <update id="updateByPrimaryKeySelective" parameterType="com.admin.entities.ClanWarApp" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     update clanwarapp
     <set >
       <if test="warId != null" >
@@ -80,7 +80,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   
-  <update id="updateByPrimaryKey" parameterType="com.admin.entities.ClanWarApp" >
+  <update id="updateByPrimaryKey" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     update clanwarapp
     set war_id = #{warId,jdbcType=INTEGER},
       member_tag = #{memberTag,jdbcType=CHAR},

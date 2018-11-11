@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.chenlin.cocadmin.entities.ClanWarApp;
 
 @Mapper
-public interface IClanWarAppMapper {
+public interface ClanWarAppMapper {
 	
     int deleteByPrimaryKey(Integer id);
 

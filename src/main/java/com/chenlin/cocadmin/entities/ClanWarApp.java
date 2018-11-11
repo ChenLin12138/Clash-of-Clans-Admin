@@ -10,6 +10,8 @@ public class ClanWarApp {
     private String memberTag;
 
     private Date beginDate;
+    
+    public ClanWarApp() {}
 
     public ClanWarApp(String memberTag, Integer warId, Date beginDate) {
     	this.memberTag = memberTag;

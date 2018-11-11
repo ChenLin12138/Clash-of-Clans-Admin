@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 
 import com.chenlin.cocadmin.entities.ClanWarApp;
 import com.chenlin.cocadmin.entities.Member;
-import com.chenlin.cocadmin.mappers.IClanWarAppMapper;
+import com.chenlin.cocadmin.mappers.ClanWarAppMapper;
 import com.chenlin.cocadmin.service.IClanWarApplyService;
 
 @Service
 public class ClanWarApplyServiceImpl implements IClanWarApplyService{
 
 	@Autowired
-	private IClanWarAppMapper mapper;
+	private ClanWarAppMapper mapper;
 	
 	@Override
 	public void apply(Member member, ClanWarApp clanWar) {
