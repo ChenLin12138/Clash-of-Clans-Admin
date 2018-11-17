@@ -7,19 +7,11 @@ public class ClanWarApp {
 
     private Integer warId;
 
-    private String memberTag;
+    private Integer memberId;
 
     private Date beginDate;
-    
-    public ClanWarApp() {}
 
-    public ClanWarApp(String memberTag, Integer warId, Date beginDate) {
-    	this.memberTag = memberTag;
-    	this.warId = warId;
-    	this.beginDate = beginDate;
-    }
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -35,12 +27,12 @@ public class ClanWarApp {
         this.warId = warId;
     }
 
-    public String getMemberTag() {
-        return memberTag;
+    public Integer getMemberId() {
+        return memberId;
     }
 
-    public void setMemberTag(String memberTag) {
-        this.memberTag = memberTag == null ? null : memberTag.trim();
+    public void setMemberId(Integer memberId) {
+        this.memberId = memberId;
     }
 
     public Date getBeginDate() {

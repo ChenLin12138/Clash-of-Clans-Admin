@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.chenlin.cocadmin.entities.ClanWarApp;
-import com.chenlin.cocadmin.entities.Member;
 import com.chenlin.cocadmin.entities.Warmember;
 import com.chenlin.cocadmin.service.IClanWarApplyService;
 

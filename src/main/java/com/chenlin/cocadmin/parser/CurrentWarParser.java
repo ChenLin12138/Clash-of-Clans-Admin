@@ -7,8 +7,6 @@ import java.util.Properties;
 
 import com.chenlin.cocadmin.entities.Clandetails;
 import com.chenlin.cocadmin.entities.Currentwar;
-import com.chenlin.cocadmin.entities.Member;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 

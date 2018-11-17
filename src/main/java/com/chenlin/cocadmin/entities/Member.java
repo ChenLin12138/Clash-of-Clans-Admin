@@ -1,49 +1,63 @@
 package com.chenlin.cocadmin.entities;
 
-public class Member{
-	
-	private int pk;
-	private String tag;
-	private String name;
-	private String position;
-	private int donations;
-	private int donationsReceived;
-	
-	public int getPk() {
-		return pk;
-	}
-	public void setPk(int pk) {
-		this.pk = pk;
-	}
-	public String getTag() {
-		return tag;
-	}
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPosition() {
-		return position;
-	}
-	public void setPosition(String position) {
-		this.position = position;
-	}
-	public int getDonations() {
-		return donations;
-	}
-	public void setDonations(int donations) {
-		this.donations = donations;
-	}
-	public int getDonationsReceived() {
-		return donationsReceived;
-	}
-	public void setDonationsReceived(int donationsReceived) {
-		this.donationsReceived = donationsReceived;
-	}
-	
+public class Member {
+    private Integer id;
+
+    private String tag;
+
+    private String name;
+
+    private String position;
+
+    private Integer donations;
+
+    private Integer donationsreceived;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag == null ? null : tag.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position == null ? null : position.trim();
+    }
+
+    public Integer getDonations() {
+        return donations;
+    }
+
+    public void setDonations(Integer donations) {
+        this.donations = donations;
+    }
+
+    public Integer getDonationsreceived() {
+        return donationsreceived;
+    }
+
+    public void setDonationsreceived(Integer donationsreceived) {
+        this.donationsreceived = donationsreceived;
+    }
 }

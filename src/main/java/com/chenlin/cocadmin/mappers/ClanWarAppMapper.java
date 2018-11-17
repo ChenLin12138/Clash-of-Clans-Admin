@@ -8,7 +8,6 @@ import com.chenlin.cocadmin.entities.ClanWarApp;
 
 @Mapper
 public interface ClanWarAppMapper {
-	
     int deleteByPrimaryKey(Integer id);
 
     int insert(ClanWarApp record);
@@ -24,5 +23,4 @@ public interface ClanWarAppMapper {
     ClanWarApp selectLstWar();
     
     List<ClanWarApp> selectByWarId(int war_id);
-    
 }

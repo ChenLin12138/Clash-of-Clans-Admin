@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <classPathEntry
-            location="E:/MavenRepository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
+            location="/home/zdm/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
     <context id="my" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
@@ -15,36 +15,47 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/coc" userId="root"
                         password="root"/>
-<!-- 请注意适当修改targetProject地址 -->
+
+<!-- 请注意适当修改targetProject地址每次仅仅enable你想要修改的那个类，避免刷新了所有类-->
         <javaModelGenerator targetPackage="com.chenlin.cocadmin.entities"
-                            targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java">
+                            targetProject="/home/zdm/eclipse-workspace/Clash-of-Clans-Admin/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.chenlin.cocadmin.mappers.xml"
-                         targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java">
+        <sqlMapGenerator targetPackage="com.chenlin.cocadmin.mappers"
+                         targetProject="/home/zdm/eclipse-workspace/Clash-of-Clans-Admin/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         
 
         <javaClientGenerator targetPackage="com.chenlin.cocadmin.mappers"
-                             targetProject="E:\COC\Clash-of-Clans-Admin\src\main\java" type="XMLMAPPER">
+                             targetProject="/home/zdm/eclipse-workspace/Clash-of-Clans-Admin/src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--<table tableName="T_FEE_AGTBILL" domainObjectName="FeeAgentBill"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>-->
+               selectByExampleQueryId="false"/>       
+             
 
-        <table tableName="clanwarapp" domainObjectName="ClanWarApp"
+         	   <table tableName="clanwarapp" domainObjectName="ClanWarApp"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
+             	</table> 
+               
+               
+        	   <table tableName="member" domainObjectName="Member"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">   
+               </table> 
+                 -->
+                 
+           
             <!--<columnRenamingRule searchString="^D_"
                                 replaceString=""/>-->
-        </table>
-
     </context>
 </generatorConfiguration>

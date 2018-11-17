@@ -46,7 +46,8 @@
 			</thead>
 			<tbody>		
 			<c:forEach items="${warmember}" var="member">
-			<td>${member.memberTag}</td>
+			<td>${member.memberId}</td>
+			<td>我是名字</td>
 			<td>${member.beginDate}</td>
 			</tr>	
 			</c:forEach>					

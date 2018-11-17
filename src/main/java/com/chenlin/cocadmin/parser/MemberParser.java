@@ -14,7 +14,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.chenlin.cocadmin.entities.Member;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -41,7 +40,7 @@ public class MemberParser {
 		    prop.load(fis);  		       
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
-			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
+			member.setDonationsreceived(Integer.parseInt(itemObj.getString("donationsReceived")));
 			members.add(member);
 			} 
 		return members;
