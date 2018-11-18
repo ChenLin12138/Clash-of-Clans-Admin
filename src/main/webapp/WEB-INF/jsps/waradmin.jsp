@@ -34,6 +34,7 @@
 
 			<thead>		
 		    	<th>ID</th>		
+		    	<th>村庄标签</th>
 				<th>村庄名称</th>
 				<th>	报名日期			
               <select id="date" name="date">
@@ -47,7 +48,8 @@
 			<tbody>		
 			<c:forEach items="${warmember}" var="member">
 			<td>${member.memberId}</td>
-			<td>我是名字</td>
+			<td>${member.member.tag}</td>
+			<td>${member.member.name}</td>
 			<td>${member.beginDate}</td>
 			</tr>	
 			</c:forEach>					

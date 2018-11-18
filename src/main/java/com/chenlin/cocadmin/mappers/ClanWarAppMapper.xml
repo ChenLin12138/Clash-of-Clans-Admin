@@ -7,6 +7,24 @@
     <result column="member_id" property="memberId" jdbcType="INTEGER" />
     <result column="begin_date" property="beginDate" jdbcType="DATE" />
   </resultMap>
+  
+  <resultMap id="WarAppViewResultMap" type="com.chenlin.cocadmin.entities.ClanWarApp">
+  	<id column="id" property="id" jdbcType="INTEGER" />
+  	<result column="war_id" property="warId" jdbcType="INTEGER" />
+  	<result column="begin_date" property="beginDate" jdbcType="DATE" />
+  	<result column="member_id" property="memberId" jdbcType="INTEGER" />
+  	<association property="member" column="member_id" javaType="com.chenlin.cocadmin.entities.Member" resultMap="MemberResultMap"/>
+  </resultMap>
+  
+  <resultMap id="MemberResultMap" type="com.chenlin.cocadmin.entities.Member" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tag" property="tag" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="position" property="position" jdbcType="CHAR" />
+    <result column="donations" property="donations" jdbcType="INTEGER" />
+    <result column="donationsReceived" property="donationsreceived" jdbcType="INTEGER" />
+  </resultMap>  
+  
   <sql id="Base_Column_List" >
     id, war_id, member_id, begin_date
   </sql>
@@ -87,10 +105,17 @@
     order by war_id desc limit 1
   </select>  
   
-  <select id="selectByWarId" resultMap="BaseResultMap">
+  <select id="selectByWarId" resultMap="WarAppViewResultMap">
     select 
-    <include refid="Base_Column_List" /> 
-    from clanwarapp 
+    clanwarapp.id, 
+    clanwarapp.war_id, 
+    clanwarapp.member_id, 
+    clanwarapp.begin_date,
+    member.tag, 
+    member.name
+    from clanwarapp
+    INNER JOIN member 
+    ON clanwarapp.member_id = member.id 
     where war_id = #{warId,jdbcType=INTEGER}
   </select> 
 </mapper>

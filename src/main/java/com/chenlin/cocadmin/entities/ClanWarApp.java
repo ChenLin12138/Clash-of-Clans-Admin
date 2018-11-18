@@ -10,8 +10,18 @@ public class ClanWarApp {
     private Integer memberId;
 
     private Date beginDate;
+    
+    private Member member;
 
-    public Integer getId() {
+    public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
+
+	public Integer getId() {
         return id;
     }
 
