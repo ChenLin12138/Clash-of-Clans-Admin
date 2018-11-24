@@ -13,8 +13,12 @@ public interface MemberMapper {
     int insertSelective(Member record);
 
     Member selectByPrimaryKey(Integer id);
+    
+    Member selectByTag(String tag);
 
     int updateByPrimaryKeySelective(Member record);
 
     int updateByPrimaryKey(Member record);
+    
+    
 }

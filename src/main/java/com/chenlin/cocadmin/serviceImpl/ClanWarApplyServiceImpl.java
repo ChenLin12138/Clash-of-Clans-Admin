@@ -16,13 +16,13 @@ public class ClanWarApplyServiceImpl implements IClanWarApplyService{
 	private ClanWarAppMapper mapper;
 	
 	@Override
-	public void apply(Member member, ClanWarApp clanWar) {
-//		ClanWarApp cwp = new ClanWarApp(member.getTag(), clanWar.getId(), clanWar.getBeginDate());		
-//		mapper.insert(cwp);	
+	public void apply(ClanWarApp clanWar) {
+		clanWar.setStatus(ClanWarApp.STATUS_ACTIVE);
+		mapper.insert(clanWar);
 	}
 
 	@Override
-	public void cancel(Member member, ClanWarApp clanWar) {
+	public void cancel(ClanWarApp clanWar) {
 	}
 
 	@Override

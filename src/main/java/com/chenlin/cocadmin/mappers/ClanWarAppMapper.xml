@@ -6,6 +6,7 @@
     <result column="war_id" property="warId" jdbcType="INTEGER" />
     <result column="member_id" property="memberId" jdbcType="INTEGER" />
     <result column="begin_date" property="beginDate" jdbcType="DATE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
   
   <resultMap id="WarAppViewResultMap" type="com.chenlin.cocadmin.entities.ClanWarApp">
@@ -40,9 +41,9 @@
   </delete>
   <insert id="insert" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     insert into clanwarapp (id, war_id, member_id, 
-      begin_date)
+      begin_date, status)
     values (#{id,jdbcType=INTEGER}, #{warId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, 
-      #{beginDate,jdbcType=DATE})
+      #{beginDate,jdbcType=DATE}, #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
     insert into clanwarapp
@@ -111,12 +112,14 @@
     clanwarapp.war_id, 
     clanwarapp.member_id, 
     clanwarapp.begin_date,
+    clanwarapp.status,
     member.tag, 
     member.name
     from clanwarapp
     INNER JOIN member 
     ON clanwarapp.member_id = member.id 
     where war_id = #{warId,jdbcType=INTEGER}
+    and   clanwarapp.status = 1
   </select> 
 </mapper>
 

@@ -12,7 +12,7 @@ public class Warmember {
 	@NotBlank(message="名称不能为空！")
 	//@Size(min=2,max=10,message="{required}")
 	private String name;
-	private int id;
+	private String tag;
 	public String getDate() {
 		return date;
 	}
@@ -25,10 +25,10 @@ public class Warmember {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getId() {
-		return id;
+	public String getTag() {
+		return tag;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 }

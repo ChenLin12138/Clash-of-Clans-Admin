@@ -9,9 +9,9 @@ import com.chenlin.cocadmin.entities.Member;
 
 public interface IClanWarApplyService {
 	
-	public void apply(Member member, ClanWarApp clanWar);
+	public void apply(ClanWarApp clanWar);
 	
-	public void cancel(Member member, ClanWarApp clanWar);
+	public void cancel(ClanWarApp clanWar);
 	
 	public List<ClanWarApp> showListByWarId(int warId);
 	

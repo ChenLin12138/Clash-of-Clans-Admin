@@ -3,6 +3,10 @@ package com.chenlin.cocadmin.entities;
 import java.util.Date;
 
 public class ClanWarApp {
+	
+	public static final Integer STATUS_ACTIVE = 1;
+	public static final Integer STATUS_CANCEL = 2;
+	
     private Integer id;
 
     private Integer warId;
@@ -12,8 +16,18 @@ public class ClanWarApp {
     private Date beginDate;
     
     private Member member;
+    
+    private Integer status;
 
-    public Member getMember() {
+    public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Member getMember() {
 		return member;
 	}
 

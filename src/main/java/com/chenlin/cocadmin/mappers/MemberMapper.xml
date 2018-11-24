@@ -18,6 +18,14 @@
     from member
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectByTag" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from member
+    where tag = #{tag,jdbcType=CHAR}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from member
     where id = #{id,jdbcType=INTEGER}

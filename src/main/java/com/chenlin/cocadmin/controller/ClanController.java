@@ -73,37 +73,4 @@ public class ClanController {
 
 		return "wardetails";
 	}
-	/*@RequestMapping(value = "/currentwar", method = RequestMethod.GET)
-	public String getCurrentWar(Model model) throws IOException {
-		List<Clandetails> clans = service.getCurrentWar(properties.getCurrentwar(), properties.getToken());
-		Clandetails clan = clans.get(0);
-		model.addAttribute("clandetails", clan);
-
-		return "clandetails";
-	}*/
-	
-	@RequestMapping(value = "/waradmin", method = RequestMethod.GET)
-	public String warEnroll(Model model) throws IOException {
-		
-		List<Warmember> members=service.showMember();
-		
-		model.addAttribute("warmember", members);
-		return "waradmin";
-	}
-	
-	@RequestMapping(value = "/waradmin", method = RequestMethod.POST)
-	public String warEnrollsubmit(@Valid Warmember warmember,Errors errors,Model model) throws SQLException  {
-		
-		if (errors.hasErrors()) {
-		//	List<Warmember> members=service.showMember();
-		//	model.addAttribute("warmember", members);
-			return "errors";
-		}
-		service.save(warmember);
-		List<Warmember> members=service.showMember();
-		model.addAttribute("warmember", members);
-		return "waradmin";
-	}
-	
-
 }

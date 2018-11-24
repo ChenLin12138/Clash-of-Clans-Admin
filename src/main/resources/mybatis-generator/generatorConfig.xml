@@ -52,7 +52,17 @@
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">   
                </table> 
-                 -->
+                      -->   
+                
+              <table tableName="war" domainObjectName="War"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">   
+               </table>  
+ 
+       
+  
+              
                  
            
             <!--<columnRenamingRule searchString="^D_"
