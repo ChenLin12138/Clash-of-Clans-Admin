@@ -17,43 +17,48 @@
 <body>
 	<jsp:include flush="true" page="header.jsp" />
 	<div class="container">
-	<sf:form method="post" action="/clan/waradmin">
-	<table class="table table-hover">
+	<sf:form method="post" action="/clanwar/apply">
+	<table>
 	<tr>
-        部落战日期:<input id="date" name="date" class="Wdate" type="text" style="width: 188px; color: #0000AA;" onfocus="WdatePicker()"><br>
-	  
-	    村庄名称： <input type=text name="name"><br>
-		 <input type="submit" value="我要报名"/><br>
-		</tr>
-		<br>
-		<br>
-		<br>
-		<tr>
-		已报名单：<br>
-		</tr>
+    	<td>部落战日期:<input id="date" name="date" class="Wdate" type="text" style="width: 188px; color: #0000AA;" onfocus="WdatePicker()"></td>
+    </tr>
+    <tr>
+    	<td>村庄标签： <input type=text name="tag"></td>
+    </tr>
+    <tr>
+    	<td>村庄名称： <input type=text name="name"></td>
+    </tr>
+    <tr>
+    	<td><input type="submit" value="我要报名"/></td>
+    </tr>
+	</table>
+	</sf:form>
+	<div>已报名单：</div>
+	<table table class="table table-hover">
 
-			<thead>		
-		    	<th>ID</th>		
+
+		</tr>
+			<thead>			
+		    	<th>村庄标签</th>
 				<th>村庄名称</th>
 				<th>	报名日期			
               <select id="date" name="date">
               <option value="0">==请选择==</option>
     		   <c:forEach items="${warmember}" var="member" varStatus="st">
-   	 	       <option value="${date}">${member.date}</option>
+   	 	       <option value="${date}">${member.beginDate}</option>
    			   </c:forEach>
 				</select>
             </th>
 			</thead>
 			<tbody>		
 			<c:forEach items="${warmember}" var="member">
-			<td>${member.id}</td>
-			<td>${member.name}</td>
-			<td>${member.date}</td>
+			<td>${member.member.tag}</td>
+			<td>${member.member.name}</td>
+			<td>${member.beginDate}</td>
 			</tr>	
 			</c:forEach>					
 			</tbody>				
 		</table>
-		</sf:form>
 	</div>
 	<jsp:include flush="true" page="footer.jsp" />
 </body>

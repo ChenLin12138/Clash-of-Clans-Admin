@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenlin.cocadmin.mappers.ClanWarAppMapper" >
+  <resultMap id="BaseResultMap" type="com.chenlin.cocadmin.entities.ClanWarApp" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="war_id" property="warId" jdbcType="INTEGER" />
+    <result column="member_id" property="memberId" jdbcType="INTEGER" />
+    <result column="begin_date" property="beginDate" jdbcType="DATE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <resultMap id="WarAppViewResultMap" type="com.chenlin.cocadmin.entities.ClanWarApp">
+  	<id column="id" property="id" jdbcType="INTEGER" />
+  	<result column="war_id" property="warId" jdbcType="INTEGER" />
+  	<result column="begin_date" property="beginDate" jdbcType="DATE" />
+  	<result column="member_id" property="memberId" jdbcType="INTEGER" />
+  	<association property="member" column="member_id" javaType="com.chenlin.cocadmin.entities.Member" resultMap="MemberResultMap"/>
+  </resultMap>
+  
+  <resultMap id="MemberResultMap" type="com.chenlin.cocadmin.entities.Member" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tag" property="tag" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="position" property="position" jdbcType="CHAR" />
+    <result column="donations" property="donations" jdbcType="INTEGER" />
+    <result column="donationsReceived" property="donationsreceived" jdbcType="INTEGER" />
+  </resultMap>  
+  
+  <sql id="Base_Column_List" >
+    id, war_id, member_id, begin_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from clanwarapp
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from clanwarapp
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
+    insert into clanwarapp (id, war_id, member_id, 
+      begin_date, status)
+    values (#{id,jdbcType=INTEGER}, #{warId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, 
+      #{beginDate,jdbcType=DATE}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
+    insert into clanwarapp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="warId != null" >
+        war_id,
+      </if>
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="beginDate != null" >
+        begin_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="warId != null" >
+        #{warId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null" >
+        #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="beginDate != null" >
+        #{beginDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
+    update clanwarapp
+    <set >
+      <if test="warId != null" >
+        war_id = #{warId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null" >
+        member_id = #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="beginDate != null" >
+        begin_date = #{beginDate,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chenlin.cocadmin.entities.ClanWarApp" >
+    update clanwarapp
+    set war_id = #{warId,jdbcType=INTEGER},
+      member_id = #{memberId,jdbcType=INTEGER},
+      begin_date = #{beginDate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectLstWar" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" /> 
+    from clanwarapp 
+    order by war_id desc limit 1
+  </select>  
+  
+  <select id="selectByWarId" resultMap="WarAppViewResultMap">
+    select 
+    clanwarapp.id, 
+    clanwarapp.war_id, 
+    clanwarapp.member_id, 
+    clanwarapp.begin_date,
+    clanwarapp.status,
+    member.tag, 
+    member.name
+    from clanwarapp
+    INNER JOIN member 
+    ON clanwarapp.member_id = member.id 
+    where war_id = #{warId,jdbcType=INTEGER}
+    and   clanwarapp.status = 1
+  </select> 
+</mapper>
+

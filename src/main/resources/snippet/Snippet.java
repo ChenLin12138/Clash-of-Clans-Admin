@@ -2,7 +2,7 @@ package snippet;
 
 public class Snippet {
 	public static void main(String[] args) {
-		com.admin.product
+		com.chenlin.cocadmin.product
 	}
 }
 
