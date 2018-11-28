@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.chenlin.cocadmin.entities.Clandetails;
 import com.chenlin.cocadmin.entities.Member;
@@ -15,7 +17,7 @@ import com.chenlin.cocadmin.parser.MemberParser;
 
 @Service
 public class APIService {
-
+	
 	public List<Member> getMembers(String url, String token) throws IOException{
 
         StringBuilder result = new StringBuilder();
@@ -36,8 +38,8 @@ public class APIService {
         } catch (IOException e) {
         }
         
-        MemberParser memberParse = new MemberParser();
-        return memberParse.getMembers(result.toString()); 
+        MemberParser memberParser = new MemberParser();
+        return memberParser.getMembers(result.toString()); 
 	}
 
 	public List<Clandetails> getClans(String clanurl, String token) throws IOException{

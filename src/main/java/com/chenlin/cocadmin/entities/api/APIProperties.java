@@ -16,6 +16,7 @@ public class APIProperties {
 	private String clanurl;
 	private String currentwar;
 	private String token;
+	private String playerurl;
 	
 	public String getUrl() {
 		return url;
@@ -39,6 +40,12 @@ public class APIProperties {
 	}
 	public void setCurrentwar(String currentwar) {
 		this.currentwar = currentwar;
+	}
+	public String getPlayerurl() {
+		return playerurl;
+	}
+	public void setPlayerurl(String playerurl) {
+		this.playerurl = playerurl;
 	}
 	
 }

@@ -21,7 +21,7 @@
 				<th><a href="/clan/members">捐兵排行榜</a></th>
 				<th><a href="/clan/wardetails">部落对战详情</a></th>
 				<th>当前部落战</th>
-				<th><a href="/clan/waradmin">部落战报名</a></th>
+				<th><a href="/clan/applylist">部落战报名</a></th>
 			</thead>
 			<tbody>		
 								

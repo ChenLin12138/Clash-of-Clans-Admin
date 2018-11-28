@@ -21,6 +21,7 @@ import com.chenlin.cocadmin.entities.Member;
 import com.chenlin.cocadmin.entities.MemberDonationSortWrapper;
 import com.chenlin.cocadmin.entities.Warmember;
 import com.chenlin.cocadmin.entities.api.APIProperties;
+import com.chenlin.cocadmin.parser.MemberParser;
 import com.chenlin.cocadmin.serviceImpl.APIService;
 
 @Controller
@@ -33,7 +34,6 @@ public class ClanController {
 
 	@Autowired
 	private APIProperties properties;
-	
 
 	@RequestMapping(value = "/members", method = RequestMethod.GET)
 	public String getMembers(Model model) throws IOException {
