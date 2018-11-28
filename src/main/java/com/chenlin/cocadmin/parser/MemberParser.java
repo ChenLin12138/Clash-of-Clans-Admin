@@ -53,7 +53,7 @@ public class MemberParser {
 		    prop.load(fis);  		       
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
-			member.setDonationsreceived(Integer.parseInt(itemObj.getString("donationsReceived")));
+			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
 			members.add(member);
 			} 
 		return members;

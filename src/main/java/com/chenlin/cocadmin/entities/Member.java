@@ -1,18 +1,19 @@
 package com.chenlin.cocadmin.entities;
 
 public class Member {
-    private Integer id;
+	
+	private Integer id;
 
-    private String tag;
+	private String tag;
 
-    private String name;
+	private String name;
 
-    private String position;
+	private String position;
 
-    private Integer donations;
+	private Integer donations;
 
-    private Integer donationsreceived;
-    private Integer warstar;
+	private Integer donationReceived;
+	private Integer warstar;
     
     public Integer getId() {
         return id;
@@ -54,13 +55,13 @@ public class Member {
         this.donations = donations;
     }
 
-    public Integer getDonationsreceived() {
-        return donationsreceived;
+    public Integer getDonationsReceived() {
+        return donationReceived;
     }
     
 
-    public void setDonationsreceived(Integer donationsreceived) {
-        this.donationsreceived = donationsreceived;
+    public void setDonationsReceived(Integer donationsreceived) {
+        this.donationReceived = donationsreceived;
     }
 
 	public Integer getWarstar() {

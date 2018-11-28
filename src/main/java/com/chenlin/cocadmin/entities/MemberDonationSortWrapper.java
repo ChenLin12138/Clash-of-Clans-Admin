@@ -15,7 +15,7 @@ public class MemberDonationSortWrapper extends Member implements Comparable<Memb
 		this.name = member.getName();
 		this.position=member.getPosition();
 		this.donations = member.getDonations();
-		this.donationsReceived = member.getDonationsreceived();
+		this.donationsReceived = member.getDonationsReceived();
 		this.warstar=member.getWarstar();
 	}
 	
@@ -70,7 +70,7 @@ public class MemberDonationSortWrapper extends Member implements Comparable<Memb
 		this.donations = donations;
 	}
 
-	public int getDonationsReceived() {
+	public Integer getDonationsReceived() {
 		return donationsReceived;
 	}
 
