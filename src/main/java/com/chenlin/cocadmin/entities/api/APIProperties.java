@@ -12,17 +12,17 @@ import org.springframework.stereotype.Component;
 
 public class APIProperties {
 	
-	private String url;
+	private String membersurl;
 	private String clanurl;
 	private String currentwar;
 	private String token;
 	private String playerurl;
 	
-	public String getUrl() {
-		return url;
+	public String getMembersurl() {
+		return membersurl;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setMembersurl(String membersurl) {
+		this.membersurl = membersurl;
 	}
 	public String getToken() {
 		return token;

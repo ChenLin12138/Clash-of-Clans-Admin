@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -18,9 +20,10 @@ import net.sf.json.JSONObject;
 
 @Service
 public class PlayerService {
-	public int getPlayers(String url, String token) throws IOException{
-
-        StringBuilder result = new StringBuilder();
+	
+	public String getPlayers(String url, String token) throws IOException{
+		
+		StringBuilder result = new StringBuilder();
         try {
             URL webUrl = new URL(url);
             
@@ -37,12 +40,7 @@ public class PlayerService {
         } catch (MalformedURLException e) {
         } catch (IOException e) {
         }
-        
-      //  MemberParser memberParse = new MemberParser();
-     //   return memberParse.getMembers(result.toString()); 
-        JSONObject jSONobj = JSONObject.fromObject(result.toString());
- 		return Integer.parseInt(jSONobj.getString("warStars"));
-		
-		
+         return result.toString();
 	}
+
 }
