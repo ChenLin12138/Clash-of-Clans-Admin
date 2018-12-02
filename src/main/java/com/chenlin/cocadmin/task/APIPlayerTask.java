@@ -1,11 +1,14 @@
-package com.chenlin.cocadmin.serviceImpl;
+package com.chenlin.cocadmin.task;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+
+import com.chenlin.cocadmin.serviceImpl.BaseAPIService;
 
 public class APIPlayerTask implements Callable<String>{
 
@@ -27,7 +30,7 @@ public class APIPlayerTask implements Callable<String>{
 		return palyerInfo;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
 		List<String> playerTagList = new ArrayList<String>();
 		playerTagList.add("209GGLPU9");
@@ -39,19 +42,14 @@ public class APIPlayerTask implements Callable<String>{
 		for(String tag: playerTagList) {
 			tasks.add(new APIPlayerTask(tag));
 		}
+		
 		ExecutorService exec = Executors.newFixedThreadPool(5);
-		try {
-			List<Future<String>> features = exec.invokeAll(tasks);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		List<Future<String>> features = exec.invokeAll(tasks);
 		List<String> players = new ArrayList<String>(tasks.size());
-		
-//		for() {
-//			
-//		}
+		for(Future<String> feature : features) {
+			players.add(feature.get());
+		}
+		System.out.print("Test");
 	}
 		
 }
