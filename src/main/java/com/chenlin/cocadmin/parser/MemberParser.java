@@ -2,7 +2,6 @@ package com.chenlin.cocadmin.parser;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -12,8 +11,13 @@ import java.util.Properties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.chenlin.cocadmin.entities.Member;
+import com.chenlin.cocadmin.entities.api.APIProperties;
+import com.chenlin.cocadmin.serviceImpl.PlayerService;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -40,7 +44,7 @@ public class MemberParser {
 		    prop.load(fis);  		       
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
-			member.setDonationsreceived(Integer.parseInt(itemObj.getString("donationsReceived")));
+			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
 			members.add(member);
 			} 
 		return members;
