@@ -24,7 +24,7 @@ public class ClanAPIService extends BaseAPIService{
 	}
 
 	public List<Clandetails> getClan(String clanTag) throws IOException{
-		String rowData = fetchRowData(properties.getMembersurl().replaceAll("{parm}", clanTag),properties.getToken());
+		String rowData = fetchRowData(properties.getMembersurl().replaceAll("\\{parm}\\", clanTag),properties.getToken());
         ClanParser clanParse = new ClanParser();
         return clanParse.getClans(rowData);
 	}
