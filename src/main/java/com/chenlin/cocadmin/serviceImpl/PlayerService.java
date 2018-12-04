@@ -25,6 +25,8 @@ public class PlayerService extends BaseAPIService{
 		
 		@Autowired
 		private APIProperties properties;
+		
+		ExecutorService exec = Executors.newFixedThreadPool(20);
 	
 		public Player getPlayer(Member member) throws IOException{
 			String playerTag = member.getTag().substring(1);
@@ -57,7 +59,6 @@ public class PlayerService extends BaseAPIService{
 				tasks.add(new APIPlayerTask(url,token));
 			}
 			
-			ExecutorService exec = Executors.newFixedThreadPool(20);
 			List<Future<String>> features;
 			Map<String,Player> players = new HashMap<String, Player>(64);
 			try {
