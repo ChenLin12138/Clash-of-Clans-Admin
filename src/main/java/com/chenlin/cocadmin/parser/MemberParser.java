@@ -39,9 +39,10 @@ public class MemberParser {
 			member.setName(itemObj.getString("name"));
 			Properties prop = new Properties();  
 		    Resource resource = new ClassPathResource("cn.properties");
-		    File file = resource.getFile();
-		    FileInputStream fis = new FileInputStream(file); 	      
-		    prop.load(fis);  		       
+		    
+//		    File file = resource.getFile();
+//		    FileInputStream fis = new FileInputStream(resource.getInputStream()); 	      
+		    prop.load(resource.getInputStream());  		       
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
 			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));

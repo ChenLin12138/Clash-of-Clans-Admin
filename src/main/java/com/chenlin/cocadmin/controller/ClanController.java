@@ -36,16 +36,18 @@ public class ClanController {
 		Set<MemberDonationSortWrapper> set = new TreeSet<MemberDonationSortWrapper>();
 		
 		long timeStart = System.currentTimeMillis();
-		Map<String,Player> players = playerservice.getPlayersConcurrent(members);
+//		Map<String,Player> players = playerservice.getPlayersConcurrent(members);
 		
 //		Map<String,Player> players = playerservice.getPlayersSerial(members);
 		
 		long timeEnd = System.currentTimeMillis();
 		System.out.println(timeEnd-timeStart);
-		
+//comment for remove player war start		
 		for(Member member : members){ 
-			Player player = players.get(member.getTag());
-			member.setWarstar(player.getWarstar());
+//			Player player = players.get(member.getTag());
+//			member.setWarstar(player.getWarstar());
+			//for test
+			member.setWarstar(0);
 			MemberDonationSortWrapper memberDonationSortWrapper = new MemberDonationSortWrapper(member);
 			set.add(memberDonationSortWrapper);
 		}
