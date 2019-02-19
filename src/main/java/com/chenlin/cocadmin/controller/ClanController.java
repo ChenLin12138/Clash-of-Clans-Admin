@@ -46,8 +46,6 @@ public class ClanController {
 		for(Member member : members){ 
 			Player player = players.get(member.getTag());
 			member.setWarstar(player.getWarstar());
-			//for test
-//			member.setWarstar(0);
 			MemberDonationSortWrapper memberDonationSortWrapper = new MemberDonationSortWrapper(member);
 			set.add(memberDonationSortWrapper);
 		}
