@@ -54,8 +54,6 @@ public  class BaseAPIService implements IAPIService {
 	}
 
 	public String fetchRowData(String url, String token){
-		System.out.println("url is "+url);
-		System.out.println("token is "+token);
 		URLConnection uc =getConnection(url, token);
 		return callAPI(uc);
 	}
