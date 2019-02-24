@@ -15,7 +15,7 @@ public class BaseAPIService implements IAPIService {
 	public String callAPI(URLConnection uc) {
 		StringBuilder result = new StringBuilder();
 
-		try (BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));) {
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream(),"UTF-8"))) {
 			String inputLine = null;
 			while ((inputLine = in.readLine()) != null) {
 				result.append(inputLine);
