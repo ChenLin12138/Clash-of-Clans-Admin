@@ -8,19 +8,19 @@ import com.chenlin.cocadmin.entities.ClanWarApp;
 
 @Mapper
 public interface ClanWarAppMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(ClanWarApp record);
+	int insert(ClanWarApp record);
 
-    int insertSelective(ClanWarApp record);
+	int insertSelective(ClanWarApp record);
 
-    ClanWarApp selectByPrimaryKey(Integer id);
+	ClanWarApp selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(ClanWarApp record);
+	int updateByPrimaryKeySelective(ClanWarApp record);
 
-    int updateByPrimaryKey(ClanWarApp record);
-    
-    ClanWarApp selectLstWar();
-    
-    List<ClanWarApp> selectByWarId(int war_id);
+	int updateByPrimaryKey(ClanWarApp record);
+
+	ClanWarApp selectLstWar();
+
+	List<ClanWarApp> selectByWarId(int war_id);
 }

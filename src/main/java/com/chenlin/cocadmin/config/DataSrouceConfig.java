@@ -6,8 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DataSrouceConfig {
-	
-	
+
 	@Bean
 	public BasicDataSource dataSrouce() {
 		BasicDataSource dataSrouce = new BasicDataSource();
@@ -18,7 +17,7 @@ public class DataSrouceConfig {
 		dataSrouce.setInitialSize(1);
 		dataSrouce.setMaxActive(2);
 		return dataSrouce;
-		
+
 	}
-	
+
 }

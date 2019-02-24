@@ -6,19 +6,18 @@ import com.chenlin.cocadmin.entities.Member;
 
 @Mapper
 public interface MemberMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(Member record);
+	int insert(Member record);
 
-    int insertSelective(Member record);
+	int insertSelective(Member record);
 
-    Member selectByPrimaryKey(Integer id);
-    
-    Member selectByTag(String tag);
+	Member selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Member record);
+	Member selectByTag(String tag);
 
-    int updateByPrimaryKey(Member record);
-    
-    
+	int updateByPrimaryKeySelective(Member record);
+
+	int updateByPrimaryKey(Member record);
+
 }

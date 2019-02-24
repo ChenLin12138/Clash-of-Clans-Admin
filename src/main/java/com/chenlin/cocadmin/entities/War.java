@@ -1,27 +1,27 @@
 package com.chenlin.cocadmin.entities;
 
 public class War {
-	
+
 	public static final Integer STATUS_ACTIVE = 1;
 	public static final Integer STATUS_FINISH = 2;
-	
-    private Integer id;
 
-    private Byte status;
+	private Integer id;
 
-    public Integer getId() {
-        return id;
-    }
+	private Byte status;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Byte getStatus() {
-        return status;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
+	public Byte getStatus() {
+		return status;
+	}
+
+	public void setStatus(Byte status) {
+		this.status = status;
+	}
 }

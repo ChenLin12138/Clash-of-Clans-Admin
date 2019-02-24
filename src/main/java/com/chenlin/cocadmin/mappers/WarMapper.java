@@ -8,18 +8,18 @@ import com.chenlin.cocadmin.entities.War;
 
 @Mapper
 public interface WarMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(War record);
+	int insert(War record);
 
-    int insertSelective(War record);
+	int insertSelective(War record);
 
-    War selectByPrimaryKey(Integer id);
+	War selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(War record);
+	int updateByPrimaryKeySelective(War record);
 
-    int updateByPrimaryKey(War record);
-    
-    List<War> selectByStatus(Integer status);
-    
+	int updateByPrimaryKey(War record);
+
+	List<War> selectByStatus(Integer status);
+
 }

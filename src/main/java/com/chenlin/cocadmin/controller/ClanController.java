@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,22 +29,21 @@ public class ClanController {
 	@Autowired
 	private PlayerService playerservice;
 
-
 	@RequestMapping(value = "/members", method = RequestMethod.GET)
 	public String getMembers(Model model) throws IOException {
 		String clanTag = "92JGQUR";
-		List<Member> members = service.getMembers(clanTag);	
+		List<Member> members = service.getMembers(clanTag);
 		Set<MemberDonationSortWrapper> set = new TreeSet<MemberDonationSortWrapper>();
-		
+
 		long timeStart = System.currentTimeMillis();
-		Map<String,Player> players = playerservice.getPlayersConcurrent(members);
-		
+		Map<String, Player> players = playerservice.getPlayersConcurrent(members);
+
 //		Map<String,Player> players = playerservice.getPlayersSerial(members);
-		
+
 		long timeEnd = System.currentTimeMillis();
-		System.out.println(timeEnd-timeStart);
+		System.out.println(timeEnd - timeStart);
 //comment for remove player war start		
-		for(Member member : members){ 
+		for (Member member : members) {
 			Player player = players.get(member.getTag());
 			member.setWarstar(player.getWarstar());
 			MemberDonationSortWrapper memberDonationSortWrapper = new MemberDonationSortWrapper(member);
@@ -69,6 +69,7 @@ public class ClanController {
 
 		return "clandetails";
 	}
+
 	@RequestMapping(value = "/wardetails", method = RequestMethod.GET)
 	public String getWar(Model model) throws IOException {
 		String clanTag = "92JGQUR";

@@ -1,7 +1,7 @@
 package com.chenlin.cocadmin.entities;
 
 public class Member {
-	
+
 	private Integer id;
 
 	private String tag;
@@ -14,55 +14,54 @@ public class Member {
 
 	private Integer donationReceived;
 	private Integer warstar;
-    
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getTag() {
-        return tag;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setTag(String tag) {
-        this.tag = tag == null ? null : tag.trim();
-    }
+	public String getTag() {
+		return tag;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setTag(String tag) {
+		this.tag = tag == null ? null : tag.trim();
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getPosition() {
-        return position;
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
-    }
+	public String getPosition() {
+		return position;
+	}
 
-    public Integer getDonations() {
-        return donations;
-    }
+	public void setPosition(String position) {
+		this.position = position == null ? null : position.trim();
+	}
 
-    public void setDonations(Integer donations) {
-        this.donations = donations;
-    }
+	public Integer getDonations() {
+		return donations;
+	}
 
-    public Integer getDonationsReceived() {
-        return donationReceived;
-    }
-    
+	public void setDonations(Integer donations) {
+		this.donations = donations;
+	}
 
-    public void setDonationsReceived(Integer donationsreceived) {
-        this.donationReceived = donationsreceived;
-    }
+	public Integer getDonationsReceived() {
+		return donationReceived;
+	}
+
+	public void setDonationsReceived(Integer donationsreceived) {
+		this.donationReceived = donationsreceived;
+	}
 
 	public Integer getWarstar() {
 		return warstar;

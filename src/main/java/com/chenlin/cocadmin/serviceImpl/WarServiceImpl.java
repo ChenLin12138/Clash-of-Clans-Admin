@@ -14,11 +14,11 @@ public class WarServiceImpl implements IWarService {
 
 	@Autowired
 	private WarMapper mapper;
-	
+
 	@Override
 	public War searchActiveWar() {
-		 List<War> warList = mapper.selectByStatus(War.STATUS_ACTIVE);
-		 return warList.get(0);
+		List<War> warList = mapper.selectByStatus(War.STATUS_ACTIVE);
+		return warList.get(0);
 	}
 
 }
