@@ -1,6 +1,7 @@
 package com.chenlin.cocadmin.parser;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -30,7 +31,8 @@ public class MemberParser {
 			Properties prop = new Properties();
 			Resource resource = new ClassPathResource("cn.properties");
 
-			prop.load(resource.getInputStream());
+			prop.load(new InputStreamReader(resource.getInputStream(), "UTF-8"));
+
 			member.setPosition(prop.getProperty(itemObj.getString("role")));
 			member.setDonations(Integer.parseInt(itemObj.getString("donations")));
 			member.setDonationsReceived(Integer.parseInt(itemObj.getString("donationsReceived")));
