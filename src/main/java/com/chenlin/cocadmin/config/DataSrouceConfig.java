@@ -3,10 +3,12 @@ package com.chenlin.cocadmin.config;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class DataSrouceConfig {
 
+//	@Profile("DEV")
 	@Bean
 	public BasicDataSource dataSrouce() {
 		BasicDataSource dataSrouce = new BasicDataSource();

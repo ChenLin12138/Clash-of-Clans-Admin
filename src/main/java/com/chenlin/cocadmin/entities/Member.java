@@ -12,7 +12,8 @@ public class Member {
 
 	private Integer donations;
 
-	private Integer donationReceived;
+	private Integer donationsreceived;
+	
 	private Integer warstar;
 
 	public Integer getId() {
@@ -55,13 +56,6 @@ public class Member {
 		this.donations = donations;
 	}
 
-	public Integer getDonationsReceived() {
-		return donationReceived;
-	}
-
-	public void setDonationsReceived(Integer donationsreceived) {
-		this.donationReceived = donationsreceived;
-	}
 
 	public Integer getWarstar() {
 		return warstar;
@@ -70,4 +64,13 @@ public class Member {
 	public void setWarstar(Integer warstar) {
 		this.warstar = warstar;
 	}
+
+	public Integer getDonationsreceived() {
+		return donationsreceived;
+	}
+
+	public void setDonationsreceived(Integer donationsreceived) {
+		this.donationsreceived = donationsreceived;
+	}
+	
 }

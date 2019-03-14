@@ -22,7 +22,7 @@ CREATE TABLE `member` (
 	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`tag` CHAR(7) NOT NULL COLLATE 'utf8_bin',
 	`name` CHAR(20) NOT NULL COLLATE 'utf8_bin',
-	`position` CHAR(3) NOT NULL DEFAULT '0' COLLATE 'utf8_bin',
+	`position` CHAR(10) NOT NULL DEFAULT '0' COLLATE 'utf8_bin',
 	`donations` INT(5) NOT NULL DEFAULT '0',
 	`donationsReceived` INT(5) NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
