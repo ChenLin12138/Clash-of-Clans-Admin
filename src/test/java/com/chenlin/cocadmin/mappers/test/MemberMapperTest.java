@@ -3,13 +3,19 @@ package com.chenlin.cocadmin.mappers.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.chenlin.cocadmin.config.DataSrouceConfig;
+import com.chenlin.cocadmin.config.MybatisMapperConfig;
 import com.chenlin.cocadmin.entities.Member;
 import com.chenlin.cocadmin.mappers.MemberMapper;
 
@@ -19,19 +25,21 @@ import com.chenlin.cocadmin.mappers.MemberMapper;
 */
 
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class) 
 @MybatisTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-//@ActiveProfiles("DEV")
+@ContextConfiguration(classes={DataSrouceConfig.class,MybatisMapperConfig.class})
+
 public class MemberMapperTest {
 	
 	@Autowired
 	MemberMapper mapper;
 	
+	
 	@Test
 	public void shouldReturnAMemberWhenpkis1(){
 		//given
-		
+				
 		//when
 		Member member = mapper.selectByPrimaryKey(1);
 		
